@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9pv-A4-QxB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Wake_Me_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iE-cT-Isy" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BHL-lJ-tII" appends="YES" id="FF0-uV-xfL"/>
+                                </connections>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjz-PB-yAP">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Wake Me Up" id="ISq-Qr-jKg">
+                                        <barButtonItem key="rightBarButtonItem" style="done" id="uMj-yl-o8Q">
+                                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="g9w-Zt-4Ki">
+                                                <rect key="frame" x="531" y="6" width="51" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="toggleFollow:" destination="9pv-A4-QxB" eventType="valueChanged" id="ama-a8-RkX"/>
+                                                </connections>
+                                            </switch>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1iE-cT-Isy" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="228-Tu-4UE"/>
+                            <constraint firstItem="1iE-cT-Isy" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="44" id="5ll-ip-fFJ"/>
+                            <constraint firstItem="tjz-PB-yAP" firstAttribute="trailing" secondItem="1iE-cT-Isy" secondAttribute="trailing" id="8M7-LQ-QXk"/>
+                            <constraint firstItem="tjz-PB-yAP" firstAttribute="leading" secondItem="1iE-cT-Isy" secondAttribute="leading" id="UYU-Mb-OGd"/>
+                            <constraint firstItem="tjz-PB-yAP" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="mR8-Ql-FnG"/>
+                            <constraint firstItem="1iE-cT-Isy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="qdh-Tw-15r"/>
+                            <constraint firstAttribute="trailing" secondItem="1iE-cT-Isy" secondAttribute="trailing" id="xC9-pJ-L6D"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mapView" destination="1iE-cT-Isy" id="Kxx-1a-Ys4"/>
+                        <outlet property="toggleFollow" destination="g9w-Zt-4Ki" id="1Kb-qb-JJ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="BHL-lJ-tII"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="-340"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
+</document>
